@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>UAMS - Maintenance</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>UAMS</h2>
+
+<p>Asset Management</p>
+
+</div>
+
+
+<nav class="sidebar-menu">
+
+<a href="dashboard.html"
+class="menu-btn">
+
+🏠 Dashboard
+
+</a>
+
+
+<a href="assets.html"
+class="menu-btn">
+
+📦 Assets
+
+</a>
+
+
+<a href="departments.html"
+class="menu-btn">
+
+🏢 Departments
+
+</a>
+
+
+<a href="locations.html"
+class="menu-btn">
+
+📍 Locations
+
+</a>
+
+
+<a href="maintenance.html"
+class="menu-btn active">
+
+🔧 Maintenance
+
+</a>
+
+
+<a href="reports.html"
+class="menu-btn">
+
+📊 Reports
+
+</a>
+
+</nav>
+
+
+<button id="logoutBtn"
+class="logout-btn">
+
+Logout
+
+</button>
+
+</aside>
+
+
+
+<main class="main-content">
+
+
+<header class="top-header">
+
+<div>
+
+<h1>Maintenance</h1>
+
+<p>
+Create and manage maintenance tickets
+</p>
+
+</div>
+
+</header>
+
+
+
+<section class="panel">
+
+<h2>
+Report Asset Issue
+</h2>
+
+<p>
+Create a maintenance ticket
+</p>
+
+
+<form id="maintenanceForm">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>Asset ID</label>
+
+<input
+type="text"
+id="ticketAsset"
+placeholder="AST-0001"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Issue</label>
+
+<input
+type="text"
+id="issue"
+placeholder="Screen not working"
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Priority</label>
+
+<select id="priority">
+
+<option>Low</option>
+
+<option>Medium</option>
+
+<option>High</option>
+
+<option>Critical</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>Reported By</label>
+
+<input
+type="text"
+id="reportedBy"
+placeholder="Admin"
+required>
+
+</div>
+
+
+</div>
+
+
+<button
+type="submit"
+class="btn-primary">
+
+Generate Ticket
+
+</button>
+
+
+<p id="ticketMessage"></p>
+
+
+</form>
+
+</section>
+
+
+
+<section class="panel">
+
+<h2>
+Maintenance Tickets
+</h2>
+
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Ticket ID</th>
+
+<th>Asset ID</th>
+
+<th>Issue</th>
+
+<th>Priority</th>
+
+<th>Reported By</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="maintenanceTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script type="module"
+src="maintenance.js"></script>
+
+</body>
+
+</html>

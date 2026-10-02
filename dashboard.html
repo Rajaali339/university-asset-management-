@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>UAMS Dashboard</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+
+        <h2>UAMS</h2>
+
+        <p>Asset Management</p>
+
+    </div>
+
+
+    <nav class="sidebar-menu">
+
+        <a href="dashboard.html"
+        class="menu-btn active">
+
+            🏠 Dashboard
+
+        </a>
+
+
+        <a href="assets.html"
+        class="menu-btn">
+
+            📦 Assets
+
+        </a>
+
+
+        <a href="departments.html"
+        class="menu-btn">
+
+            🏢 Departments
+
+        </a>
+
+
+        <a href="locations.html"
+        class="menu-btn">
+
+            📍 Locations
+
+        </a>
+
+
+        <a href="maintenance.html"
+        class="menu-btn">
+
+            🔧 Maintenance
+
+        </a>
+
+
+        <a href="reports.html"
+        class="menu-btn">
+
+            📊 Reports
+
+        </a>
+
+    </nav>
+
+
+    <button id="logoutBtn"
+    class="logout-btn">
+
+        Logout
+
+    </button>
+
+</aside>
+
+
+
+<!-- MAIN -->
+
+<main class="main-content">
+
+
+<header class="top-header">
+
+    <div>
+
+        <h1>Dashboard</h1>
+
+        <p>
+        University Asset Management System
+        </p>
+
+    </div>
+
+
+    <div class="admin">
+
+        <div class="admin-circle">
+            A
+        </div>
+
+        <span>Admin</span>
+
+    </div>
+
+</header>
+
+
+
+<!-- STATISTICS -->
+
+<section class="stats-grid">
+
+
+<div class="stat-card">
+
+    <div>
+
+        <p>Total Assets</p>
+
+        <h2 id="totalAssets">
+            0
+        </h2>
+
+    </div>
+
+    <span class="stat-icon">
+        📦
+    </span>
+
+</div>
+
+
+
+<div class="stat-card">
+
+    <div>
+
+        <p>Available</p>
+
+        <h2 id="availableAssets">
+            0
+        </h2>
+
+    </div>
+
+    <span class="stat-icon">
+        ✅
+    </span>
+
+</div>
+
+
+
+<div class="stat-card">
+
+    <div>
+
+        <p>Assigned</p>
+
+        <h2 id="assignedAssets">
+            0
+        </h2>
+
+    </div>
+
+    <span class="stat-icon">
+        👤
+    </span>
+
+</div>
+
+
+
+<div class="stat-card">
+
+    <div>
+
+        <p>Maintenance</p>
+
+        <h2 id="maintenanceAssets">
+            0
+        </h2>
+
+    </div>
+
+    <span class="stat-icon">
+        🔧
+    </span>
+
+</div>
+
+
+
+<div class="stat-card">
+
+    <div>
+
+        <p>Disposed</p>
+
+        <h2 id="disposedAssets">
+            0
+        </h2>
+
+    </div>
+
+    <span class="stat-icon">
+        🗑️
+    </span>
+
+</div>
+
+
+</section>
+
+
+
+<!-- GRAPH -->
+
+<section class="panel">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                Asset Performance
+            </h2>
+
+            <p>
+                Current asset status
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="chart-container">
+
+        <canvas id="assetChart"></canvas>
+
+    </div>
+
+</section>
+
+
+
+<!-- RECENT MAINTENANCE -->
+
+<section class="panel">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>
+                Recent Maintenance Tickets
+            </h2>
+
+            <p>
+                Latest reported asset issues
+            </p>
+
+        </div>
+
+
+        <a href="maintenance.html"
+        class="small-btn">
+
+            View All
+
+        </a>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Ticket</th>
+                    <th>Asset</th>
+                    <th>Issue</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="ticketTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script type="module"
+src="dashboard.js"></script>
+
+</body>
+
+</html>

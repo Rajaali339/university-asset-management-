@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>UAMS - Assets</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+<!-- =================================================
+     SIDEBAR
+================================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <h2>UAMS</h2>
+
+        <p>Asset Management</p>
+
+    </div>
+
+
+    <nav class="sidebar-menu">
+
+
+        <a href="dashboard.html"
+           class="menu-btn">
+
+            🏠 Dashboard
+
+        </a>
+
+
+        <a href="assets.html"
+           class="menu-btn active">
+
+            📦 Assets
+
+        </a>
+
+
+        <a href="departments.html"
+           class="menu-btn">
+
+            🏢 Departments
+
+        </a>
+
+
+        <a href="locations.html"
+           class="menu-btn">
+
+            📍 Locations
+
+        </a>
+
+
+        <a href="maintenance.html"
+           class="menu-btn">
+
+            🔧 Maintenance
+
+        </a>
+
+
+        <a href="reports.html"
+           class="menu-btn">
+
+            📊 Reports
+
+        </a>
+
+
+    </nav>
+
+
+    <button
+        id="logoutBtn"
+        class="logout-btn">
+
+        Logout
+
+    </button>
+
+
+</aside>
+
+
+
+<!-- =================================================
+     MAIN CONTENT
+================================================= -->
+
+<main class="main-content">
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+
+    <div>
+
+        <h1>Assets</h1>
+
+        <p>
+            Manage university assets
+        </p>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =================================================
+     ADD NEW ASSET
+================================================= -->
+
+<section class="panel">
+
+
+    <div class="section-title">
+
+
+        <div>
+
+            <h2>
+                Add New Asset
+            </h2>
+
+            <p>
+                Enter asset information
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <form id="assetForm">
+
+
+        <div class="form-grid">
+
+
+            <!-- ASSET ID -->
+
+            <div class="form-group">
+
+                <label>
+                    Asset ID
+                </label>
+
+                <input
+                    type="text"
+                    id="assetId"
+                    placeholder="CHK-UOC-0001"
+                    required>
+
+            </div>
+
+
+
+            <!-- ASSET NAME -->
+
+            <div class="form-group">
+
+                <label>
+                    Asset Name
+                </label>
+
+                <input
+                    type="text"
+                    id="assetName"
+                    placeholder="Dell Laptop"
+                    required>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select id="category">
+
+                    <option value="Laptop">
+                        Laptop
+                    </option>
+
+                    <option value="Computer">
+                        Computer
+                    </option>
+
+                    <option value="Printer">
+                        Printer
+                    </option>
+
+                    <option value="Projector">
+                        Projector
+                    </option>
+
+                    <option value="Furniture">
+                        Furniture
+                    </option>
+
+                    <option value="Networking">
+                        Networking
+                    </option>
+
+                    <option value="Laboratory Equipment">
+                        Laboratory Equipment
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DEPARTMENT -->
+
+            <div class="form-group">
+
+                <label>
+                    Department
+                </label>
+
+                <select id="department">
+
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
+
+                    <option value="Electrical Engineering">
+                        Electrical Engineering
+                    </option>
+
+                    <option value="Administration">
+                        Administration
+                    </option>
+
+                    <option value="Library">
+                        Library
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="form-group">
+
+                <label>
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="CS-Lab-01">
+
+            </div>
+
+
+
+            <!-- SERIAL NUMBER -->
+
+            <div class="form-group">
+
+                <label>
+                    Serial Number
+                </label>
+
+                <input
+                    type="text"
+                    id="serialNumber"
+                    placeholder="SN123456">
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="form-group">
+
+                <label>
+                    Status
+                </label>
+
+                <select id="status">
+
+                    <option value="Available">
+                        Available
+                    </option>
+
+                    <option value="Assigned">
+                        Assigned
+                    </option>
+
+                    <option value="Maintenance">
+                        Maintenance
+                    </option>
+
+                    <option value="Disposed">
+                        Disposed
+                    </option>
+
+                    <option value="Damaged">
+                        Damaged
+                    </option>
+
+                    <option value="Lost">
+                        Lost
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PURCHASE DATE -->
+
+            <div class="form-group">
+
+                <label>
+                    Purchase Date
+                </label>
+
+                <input
+                    type="date"
+                    id="purchaseDate">
+
+            </div>
+
+
+        </div>
+
+
+
+        <button
+            class="btn-primary"
+            type="submit">
+
+            + Add Asset
+
+        </button>
+
+
+        <p id="assetMessage"></p>
+
+
+    </form>
+
+
+</section>
+
+
+
+<!-- =================================================
+     ASSET INVENTORY
+================================================= -->
+
+<section class="panel">
+
+
+    <div class="section-title">
+
+
+        <div>
+
+            <h2>
+                Asset Inventory
+            </h2>
+
+            <p>
+                Search and filter previous university assets
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FILTER BOX
+    ================================================= -->
+
+    <div class="asset-filter-box">
+
+
+        <h3>
+            🔎 Filter Assets
+        </h3>
+
+
+
+        <div class="asset-filter-grid">
+
+
+            <!-- ================= ASSET ID ================= -->
+
+            <div class="form-group">
+
+                <label>
+                    Asset ID
+                </label>
+
+                <input
+                    type="text"
+                    id="filterAssetId"
+                    placeholder="Enter Asset ID">
+
+            </div>
+
+
+
+            <!-- ================= CATEGORY ================= -->
+
+            <div class="form-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select id="filterCategory">
+
+                    <option value="">
+                        All Categories
+                    </option>
+
+                    <option value="Laptop">
+                        Laptop
+                    </option>
+
+                    <option value="Computer">
+                        Computer
+                    </option>
+
+                    <option value="Printer">
+                        Printer
+                    </option>
+
+                    <option value="Projector">
+                        Projector
+                    </option>
+
+                    <option value="Furniture">
+                        Furniture
+                    </option>
+
+                    <option value="Networking">
+                        Networking
+                    </option>
+
+                    <option value="Laboratory Equipment">
+                        Laboratory Equipment
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ================= DEPARTMENT ================= -->
+
+            <div class="form-group">
+
+                <label>
+                    Department
+                </label>
+
+                <select id="filterDepartment">
+
+                    <option value="">
+                        All Departments
+                    </option>
+
+                    <option value="Computer Science">
+                        Computer Science
+                    </option>
+
+                    <option value="Information Technology">
+                        Information Technology
+                    </option>
+
+                    <option value="Electrical Engineering">
+                        Electrical Engineering
+                    </option>
+
+                    <option value="Administration">
+                        Administration
+                    </option>
+
+                    <option value="Library">
+                        Library
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ================= LOCATION ================= -->
+
+            <div class="form-group">
+
+                <label>
+                    Location
+                </label>
+
+                <input
+                    type="text"
+                    id="filterLocation"
+                    placeholder="CS-Lab-01">
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FILTER BUTTONS
+        ================================================= -->
+
+        <div class="filter-buttons">
+
+
+            <button
+                type="button"
+                id="filterBtn"
+                class="btn-filter">
+
+                🔎 Search Assets
+
+            </button>
+
+
+
+            <button
+                type="button"
+                id="clearFilterBtn"
+                class="btn-clear">
+
+                ✖ Clear Filters
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         PREVIOUS ASSETS HEADER
+    ================================================= -->
+
+    <div class="section-title">
+
+
+        <div>
+
+            <h2>
+                Previous Assets
+            </h2>
+
+            <p>
+                All university assets
+            </p>
+
+        </div>
+
+
+
+        <div class="inventory-info">
+
+            <span id="assetCount">
+
+                0 Assets
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         ASSET TABLE
+    ================================================= -->
+
+    <div class="table-container">
+
+
+        <table>
+
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Asset ID
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Department
+                    </th>
+
+                    <th>
+                        Location
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+
+            <tbody id="assetTable">
+
+                <!--
+                    Firebase assets will appear here
+                    through assets.js
+                -->
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         NO ASSETS
+    ================================================= -->
+
+    <div
+        id="noAssets"
+        class="no-assets">
+
+        ❌ No assets found.
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+
+</div>
+
+
+
+<!-- =================================================
+     JAVASCRIPT
+================================================= -->
+
+<script
+    type="module"
+    src="assets.js">
+</script>
+
+
+</body>
+
+</html>

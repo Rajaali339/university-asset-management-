@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>UAMS - Departments</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>UAMS</h2>
+
+<p>Asset Management</p>
+
+</div>
+
+
+<nav class="sidebar-menu">
+
+<a href="dashboard.html"
+class="menu-btn">
+
+🏠 Dashboard
+
+</a>
+
+
+<a href="assets.html"
+class="menu-btn">
+
+📦 Assets
+
+</a>
+
+
+<a href="departments.html"
+class="menu-btn active">
+
+🏢 Departments
+
+</a>
+
+
+<a href="locations.html"
+class="menu-btn">
+
+📍 Locations
+
+</a>
+
+
+<a href="maintenance.html"
+class="menu-btn">
+
+🔧 Maintenance
+
+</a>
+
+
+<a href="reports.html"
+class="menu-btn">
+
+📊 Reports
+
+</a>
+
+</nav>
+
+
+<button id="logoutBtn"
+class="logout-btn">
+
+Logout
+
+</button>
+
+</aside>
+
+
+
+<main class="main-content">
+
+
+<header class="top-header">
+
+<div>
+
+<h1>Departments</h1>
+
+<p>
+Assets by department
+</p>
+
+</div>
+
+</header>
+
+
+
+<section
+id="departmentGrid"
+class="department-grid">
+
+</section>
+
+
+
+<section class="panel">
+
+<h2>
+Department Assets
+</h2>
+
+<div class="table-container">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Asset ID</th>
+
+<th>Asset Name</th>
+
+<th>Department</th>
+
+<th>Location</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+
+<tbody id="departmentTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<script type="module"
+src="departments.js"></script>
+
+</body>
+
+</html>
